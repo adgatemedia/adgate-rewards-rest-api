@@ -1,7 +1,7 @@
 # AdGate Rewards API v1 Documentation
 
 
-All successful API calls return a `200` response code and a top-level `status` attribute with a value of `success`. Returned data is provided in the `data` attribute. API endpoints start with `/apiv1/`. POST and PUT urls accept a JSON string with the required data.
+All successful API calls return a `200` response code and a top-level `status` attribute with a value of `success`. Returned data is provided in the `data` attribute. The base URL for all API endpoints is `https://wall.adgaterewards.com/apiv1/`. HTTP and HTTPS requests are accepted. POST and PUT urls accept a JSON string with the required data.
 
 Errors return a `4xx` or `5xx` response code, a `status` attribute with the value of `error`, and an `error` object with additional information. For example:
 
@@ -67,6 +67,8 @@ Example response:
 #### Fetch All Offers
 
 GET: `/apiv1/vc/{vcCode}/users/{userid}/offers`: Fetch all offers as an array for the provided VC wall and user, taking into account the user's devices. Currently uses the requestor's user agent to determine the users' device. You may pass a `country_code` GET parameter containing a two-character country code OR an `ip` GET parameter of the user's IP that we will use to determine geolocation. If none of these two parameters are provided, we will use the API request's IP to determine geo location to show relevant offers. Also accepts 4 subid GET variables, s2 - s5, e.g. `s2=string`. The returned offers will have these subids appended to their URLs.
+
+You may pass a two-letter language code to retrieve the offers in their native language (if available), such as `de`. The default is `en` for English.
 
 Returned attributes for each offer:
 
