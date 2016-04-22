@@ -70,7 +70,7 @@ GET: `/apiv1/vc/{vcCode}/users/{userid}/offers`: Fetch all offers as an array fo
 
 You may pass a two-letter language code to retrieve the offers in their native language (if available), such as `de`. The default is `en` for English.
 
-You may fetch offers for mobile devices by passing a `device` GET param with a value of `android`, `iphone`, or `ipad`. If your users are coming from a native app, pass a `android_id` or `ios_id` GET variable with the corresponding unique device ID provided by the app (`ANDROID_ID` for Android, `IDFA` for iOS). This will return offers that require these identifiers to be preset.
+You may fetch offers for mobile devices by passing a `device` GET param with a value of `android`, `iphone`, or `ipad`. If your users are coming from a native app, pass a `android_id` or `ios_id` GET variable with the corresponding unique device ID provided by the app (`ANDROID_ID` for Android, `IDFA` for iOS). This will return offers that require these identifiers to be preset. You may also fetch offers matching a user's user-agent string by passing a `ua` GET variable (this supercedes the `device` param.)
 
 Returned attributes for each offer:
 
