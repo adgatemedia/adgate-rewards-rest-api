@@ -1,5 +1,7 @@
 # AdGate Rewards API v1 Documentation
 
+## DEPRECATION NOTICE: This API is deprecated. Please use our [offer API](https://panel.adgatemedia.com/affiliate/api/offers).
+
 If you wish to display our wall on your website, we highly recommend you use our [AdGate Rewards page in an iframe](https://github.com/adgatemedia/adgaterewards) to display it to your users. However, should you require a more customized experience for your users, we provide a complete HTTP REST API to build your own wall, which is documented below. It is the one we use in production, so anything that is done in the wall we provide can be accomplished on your own.
 
 All successful API calls return a `200` response code and a top-level `status` attribute with a value of `success`. Returned data is provided in the `data` attribute. The base URL for all API endpoints is `https://wall.adgaterewards.com/apiv1/`. HTTP and HTTPS requests are accepted. POST and PUT urls accept a JSON string with the required data.
